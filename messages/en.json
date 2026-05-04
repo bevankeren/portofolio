@@ -1,0 +1,125 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "focus": "Career Focus",
+    "projects": "Projects",
+    "skills": "Skills",
+    "education": "Education",
+    "certificates": "Certificates",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Muhammad Bevan Alqarana",
+    "tagline": "BA / DA / IT Support Intern Candidate",
+    "description": "A Computer Network Engineering graduate who likes solving problems, working with data, automation, clear documentation, and communication. I bring a technical foundation, English proficiency, and readiness for fast-paced internship environments.",
+    "cta_cv": "Download CV",
+    "cta_projects": "View Projects",
+    "cta_contact": "Contact Me"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "I do not only learn tools, I also train analytical thinking and communication.",
+    "bio": "I'm Muhammad Bevan Alqarana, 19 years old, a 2nd semester student at Cakrawala University and a Computer Network Engineering graduate from SMK Perguruan Cikini 3. My background is in networking and troubleshooting, and now I am building skills in data, automation, basic business analysis, and IT support. I am comfortable understanding problems, organizing information, explaining ideas, and independently learning tools like n8n and Supabase.",
+    "location": "Depok, Indonesia",
+    "university": "Cakrawala University",
+    "major": "Semester 2",
+    "school": "SMK Perguruan Cikini 3 (TKJ)",
+    "hard_title": "Hard Skills",
+    "hard_skills": ["Networking", "Troubleshooting", "Microsoft Excel", "Basic SQL", "Supabase", "n8n Automation", "Flowchart", "Documentation", "Discord Bot Scripting"],
+    "soft_title": "Soft Skills",
+    "soft_skills": ["English Communication", "Analytical Thinking", "Problem Solving", "Teamwork", "Adaptability", "Attention to Detail"],
+    "language_title": "English Proficiency",
+    "language_desc": "Confident English user with an IELTS certificate. Ready for documentation, communication, and interviews in English.",
+    "ielts_label": "IELTS Certified",
+    "profile_tag_1": "Fast Learner",
+    "profile_tag_2": "Detail-Oriented",
+    "profile_tag_3": "Tech + Analysis"
+  },
+  "career": {
+    "title": "Career Focus",
+    "subtitle": "Internship areas I am targeting with fundamental skills and willingness to learn",
+    "ba_title": "Business Analyst Intern",
+    "ba_points": ["Basic Requirement Gathering", "Process Mapping", "Flowchart & Documentation", "Problem Understanding", "Clear Communication"],
+    "da_title": "Data Analyst Intern",
+    "da_points": ["Data Cleaning", "Data Visualization", "Dashboard & Reporting", "SQL & Excel", "Insight Generation"],
+    "it_title": "IT Support Intern",
+    "it_points": ["Troubleshooting", "Networking", "Hardware & Software", "System Administration", "User Support"]
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "A collection of projects showcasing my capabilities",
+    "filter_all": "All",
+    "filter_data": "Data",
+    "filter_business": "Business",
+    "filter_technical": "Technical",
+    "source_code": "Source Code",
+    "live_demo": "Live Demo",
+    "project1_title": "Discord Bot - Word Chain",
+    "project1_desc": "A Discord bot for the word chain game on Beverly Hub server with an Indonesian dictionary database. The bot validates words, tracks scores, and manages player turns.",
+    "project2_title": "Sales Data Analysis Dashboard",
+    "project2_desc": "An interactive sales data analysis dashboard with visualizations using pivot tables and charts.",
+    "project2_badge": "Planned For Later",
+    "project3_title": "Network Infrastructure Design",
+    "project3_desc": "A computer network design simulation for an office environment using Cisco Packet Tracer.",
+    "project3_badge": "Planned For Later",
+    "project4_title": "Business Process Documentation",
+    "project4_desc": "Business process flow documentation using flowcharts and requirement lists with BPMN notation.",
+    "project4_badge": "Planned For Later"
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Skills I have and continuously develop",
+    "cat_business": "Business & Analysis",
+    "cat_data": "Data",
+    "cat_technical": "Technical / IT",
+    "cat_tools": "Tools & Automation"
+  },
+  "education": {
+    "title": "Education",
+    "subtitle": "My academic journey",
+    "uni_name": "Cakrawala University",
+    "uni_period": "2024 - Present",
+    "uni_desc": "Active 2nd semester student. Focused on learning business analysis, data, and supporting technologies.",
+    "school_name": "SMK Perguruan Cikini 3",
+    "school_major": "Computer Network Engineering (TKJ)",
+    "school_period": "2021 - 2024",
+    "school_desc": "Graduated with competencies in computer networking, troubleshooting, and system administration."
+  },
+  "certificates": {
+    "title": "Certificates",
+    "subtitle": "Certifications and target certifications that support my profile",
+    "coming_soon": "Planned For Later",
+    "placeholder_text": "This certification is part of my future learning target to strengthen my skills.",
+    "verified": "Certified",
+    "cert1": "IELTS English Proficiency",
+    "cert1_desc": "English proficiency certificate for academic and professional communication.",
+    "cert2": "Google Data Analytics",
+    "cert3": "Cisco CCNA",
+    "cert4": "Microsoft Office Specialist"
+  },
+  "github": {
+    "title": "GitHub",
+    "subtitle": "My coding activity and contributions",
+    "view_profile": "View GitHub Profile",
+    "repos": "Repositories",
+    "contributions": "Contributions"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "I'm open to internship opportunities and collaboration",
+    "cta": "Let's connect! I'm always open to discussing internship opportunities in Data Analyst, IT Support, or Business Analyst Intern roles.",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "location": "Location",
+    "form_name": "Name",
+    "form_email": "Email",
+    "form_message": "Message",
+    "form_send": "Send Message"
+  },
+  "footer": {
+    "built_with": "Built with Next.js & Tailwind CSS",
+    "copyright": "© 2024 Muhammad Bevan Alqarana. All rights reserved."
+  }
+}

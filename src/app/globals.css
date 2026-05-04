@@ -2,26 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  body {
+    @apply bg-background text-text-primary font-body;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .neo-border {
+    @apply border-3 border-black rounded-neo;
+  }
+
+  .neo-shadow {
+    @apply shadow-neo;
+  }
+
+  .neo-card {
+    @apply neo-border neo-shadow bg-surface p-6 transition-all duration-200;
+  }
+
+  .neo-card:hover {
+    @apply shadow-neo-hover -translate-x-[2px] -translate-y-[2px];
+  }
+
+  .neo-btn {
+    @apply neo-border neo-shadow px-6 py-3 font-heading font-bold text-sm uppercase tracking-wide transition-all duration-150;
+  }
+
+  .neo-btn:hover {
+    @apply shadow-neo-hover -translate-x-[2px] -translate-y-[2px];
+  }
+
+  .neo-btn:active {
+    @apply shadow-neo-active translate-x-[4px] translate-y-[4px];
+  }
+
+  .neo-badge {
+    @apply inline-flex items-center px-3 py-1 border-2 border-black rounded-full text-xs font-bold font-heading;
+  }
+
+  .section-padding {
+    @apply py-20 px-4 md:px-8 lg:px-16;
+  }
+
+  .container-main {
+    @apply max-w-6xl mx-auto;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
+  .dot-pattern {
+    background-image: radial-gradient(circle, #00000015 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFFDF7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1A1A1A;
+  border: 2px solid #FFFDF7;
+  border-radius: 8px;
 }

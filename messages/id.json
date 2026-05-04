@@ -1,0 +1,125 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "focus": "Fokus Karir",
+    "projects": "Proyek",
+    "skills": "Keahlian",
+    "education": "Pendidikan",
+    "certificates": "Sertifikat",
+    "contact": "Kontak"
+  },
+  "hero": {
+    "greeting": "Halo, saya",
+    "name": "Muhammad Bevan Alqarana",
+    "tagline": "BA / DA / IT Support Intern Candidate",
+    "description": "Mahasiswa TKJ yang suka ngulik problem, data, automation, dokumentasi, dan komunikasi. Punya fondasi teknis, English proficiency, dan siap masuk ke environment internship yang fast-paced.",
+    "cta_cv": "Download CV",
+    "cta_projects": "Lihat Proyek",
+    "cta_contact": "Hubungi Saya"
+  },
+  "about": {
+    "title": "Tentang Saya",
+    "subtitle": "Bukan cuma belajar tools, saya juga melatih cara berpikir analitis dan komunikasi.",
+    "bio": "Saya Muhammad Bevan Alqarana, 19 tahun, mahasiswa semester 2 Cakrawala University dan alumni TKJ SMK Perguruan Cikini 3. Background saya ada di jaringan komputer dan troubleshooting, lalu sekarang saya mengembangkan skill ke data, automation, basic business analysis, dan IT support. Saya nyaman membaca masalah, merapikan informasi, menjelaskan ide, dan belajar tools baru seperti n8n dan Supabase secara mandiri.",
+    "location": "Depok, Indonesia",
+    "university": "Cakrawala University",
+    "major": "Semester 2",
+    "school": "SMK Perguruan Cikini 3 (TKJ)",
+    "hard_title": "Hard Skills",
+    "hard_skills": ["Networking", "Troubleshooting", "Microsoft Excel", "Basic SQL", "Supabase", "n8n Automation", "Flowchart", "Documentation", "Discord Bot Scripting"],
+    "soft_title": "Soft Skills",
+    "soft_skills": ["English Communication", "Analytical Thinking", "Problem Solving", "Teamwork", "Adaptability", "Attention to Detail"],
+    "language_title": "English Proficiency",
+    "language_desc": "Confident English user dengan sertifikat IELTS. Siap untuk dokumentasi, komunikasi, dan interview berbahasa Inggris.",
+    "ielts_label": "IELTS Certified",
+    "profile_tag_1": "Fast Learner",
+    "profile_tag_2": "Detail-Oriented",
+    "profile_tag_3": "Tech + Analysis"
+  },
+  "career": {
+    "title": "Fokus Karir",
+    "subtitle": "Bidang internship yang saya incar dengan fokus skill fundamental dan willingness to learn",
+    "ba_title": "Business Analyst Intern",
+    "ba_points": ["Basic Requirement Gathering", "Process Mapping", "Flowchart & Documentation", "Problem Understanding", "Clear Communication"],
+    "da_title": "Data Analyst Intern",
+    "da_points": ["Data Cleaning", "Visualisasi Data", "Dashboard & Reporting", "SQL & Excel", "Insight Generation"],
+    "it_title": "IT Support Intern",
+    "it_points": ["Troubleshooting", "Networking", "Hardware & Software", "System Administration", "User Support"]
+  },
+  "projects": {
+    "title": "Proyek",
+    "subtitle": "Koleksi proyek yang menunjukkan kemampuan saya",
+    "filter_all": "Semua",
+    "filter_data": "Data",
+    "filter_business": "Bisnis",
+    "filter_technical": "Teknis",
+    "source_code": "Source Code",
+    "live_demo": "Live Demo",
+    "project1_title": "Discord Bot - Sambung Kata",
+    "project1_desc": "Bot Discord untuk game sambung kata di server Beverly Hub dengan database kamus bahasa Indonesia. Bot memvalidasi kata, melacak skor, dan mengelola giliran pemain.",
+    "project2_title": "Sales Data Analysis Dashboard",
+    "project2_desc": "Dashboard analisis data penjualan dengan visualisasi interaktif menggunakan pivot table dan chart.",
+    "project2_badge": "Akan Diambil Kelak",
+    "project3_title": "Network Infrastructure Design",
+    "project3_desc": "Simulasi desain jaringan komputer untuk lingkungan kantor menggunakan Cisco Packet Tracer.",
+    "project3_badge": "Akan Diambil Kelak",
+    "project4_title": "Business Process Documentation",
+    "project4_desc": "Dokumentasi alur proses bisnis menggunakan flowchart dan requirement list dengan notasi BPMN.",
+    "project4_badge": "Akan Diambil Kelak"
+  },
+  "skills": {
+    "title": "Keahlian",
+    "subtitle": "Skill yang saya miliki dan terus kembangkan",
+    "cat_business": "Business & Analysis",
+    "cat_data": "Data",
+    "cat_technical": "Technical / IT",
+    "cat_tools": "Tools & Automation"
+  },
+  "education": {
+    "title": "Pendidikan",
+    "subtitle": "Perjalanan akademis saya",
+    "uni_name": "Cakrawala University",
+    "uni_period": "2024 - Sekarang",
+    "uni_desc": "Mahasiswa aktif semester 2. Fokus belajar analisis bisnis, data, dan teknologi pendukung.",
+    "school_name": "SMK Perguruan Cikini 3",
+    "school_major": "Teknik Komputer dan Jaringan (TKJ)",
+    "school_period": "2021 - 2024",
+    "school_desc": "Lulus dengan kompetensi di bidang jaringan komputer, troubleshooting, dan administrasi sistem."
+  },
+  "certificates": {
+    "title": "Sertifikat",
+    "subtitle": "Sertifikasi dan target sertifikasi yang mendukung profil saya",
+    "coming_soon": "Akan Diambil Kelak",
+    "placeholder_text": "Sertifikasi ini menjadi target belajar berikutnya untuk memperkuat skill.",
+    "verified": "Certified",
+    "cert1": "IELTS English Proficiency",
+    "cert1_desc": "Sertifikat kemampuan bahasa Inggris untuk komunikasi akademik dan profesional.",
+    "cert2": "Google Data Analytics",
+    "cert3": "Cisco CCNA",
+    "cert4": "Microsoft Office Specialist"
+  },
+  "github": {
+    "title": "GitHub",
+    "subtitle": "Aktivitas coding dan kontribusi saya",
+    "view_profile": "Lihat Profil GitHub",
+    "repos": "Repositories",
+    "contributions": "Kontribusi"
+  },
+  "contact": {
+    "title": "Kontak",
+    "subtitle": "Saya terbuka untuk kesempatan internship dan kolaborasi",
+    "cta": "Mari terhubung! Saya selalu terbuka untuk diskusi tentang peluang internship di bidang Data Analyst, IT Support, atau Business Analyst Intern.",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "location": "Lokasi",
+    "form_name": "Nama",
+    "form_email": "Email",
+    "form_message": "Pesan",
+    "form_send": "Kirim Pesan"
+  },
+  "footer": {
+    "built_with": "Dibuat dengan Next.js & Tailwind CSS",
+    "copyright": "© 2024 Muhammad Bevan Alqarana. All rights reserved."
+  }
+}
