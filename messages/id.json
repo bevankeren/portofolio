@@ -104,7 +104,8 @@
     "subtitle": "Aktivitas coding dan kontribusi saya",
     "view_profile": "Lihat Profil GitHub",
     "repos": "Repositories",
-    "contributions": "Kontribusi"
+    "contributions": "Kontribusi",
+    "followers": "Followers"
   },
   "contact": {
     "title": "Kontak",
@@ -116,10 +117,13 @@
     "form_name": "Nama",
     "form_email": "Email",
     "form_message": "Pesan",
-    "form_send": "Kirim Pesan"
+    "form_send": "Kirim Pesan",
+    "form_sending": "Mengirim...",
+    "form_success": "Pesan berhasil terkirim! Saya akan segera membalas.",
+    "form_error": "Gagal mengirim pesan. Silakan coba lagi atau hubungi saya langsung."
   },
   "footer": {
     "built_with": "Dibuat dengan Next.js & Tailwind CSS",
-    "copyright": "© 2024 Muhammad Bevan Alqarana. All rights reserved."
+    "copyright": "© {year} Muhammad Bevan Alqarana. All rights reserved."
   }
 }

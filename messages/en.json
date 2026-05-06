@@ -104,7 +104,8 @@
     "subtitle": "My coding activity and contributions",
     "view_profile": "View GitHub Profile",
     "repos": "Repositories",
-    "contributions": "Contributions"
+    "contributions": "Contributions",
+    "followers": "Followers"
   },
   "contact": {
     "title": "Contact",
@@ -116,10 +117,13 @@
     "form_name": "Name",
     "form_email": "Email",
     "form_message": "Message",
-    "form_send": "Send Message"
+    "form_send": "Send Message",
+    "form_sending": "Sending...",
+    "form_success": "Message sent successfully! I'll get back to you soon.",
+    "form_error": "Failed to send message. Please try again or contact me directly."
   },
   "footer": {
     "built_with": "Built with Next.js & Tailwind CSS",
-    "copyright": "© 2024 Muhammad Bevan Alqarana. All rights reserved."
+    "copyright": "© {year} Muhammad Bevan Alqarana. All rights reserved."
   }
 }

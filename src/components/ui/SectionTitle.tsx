@@ -22,24 +22,34 @@ export default function SectionTitle({
   color = "blue",
 }: SectionTitleProps) {
   return (
-    <motion.div
-      className="text-center mb-12"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-    >
-      <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-primary mb-3">
+    <div className="text-center mb-12">
+      <motion.h2
+        className="text-3xl md:text-4xl font-heading font-bold text-text-primary mb-3"
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         {title}
-      </h2>
-      <div
+      </motion.h2>
+      <motion.div
         className={`w-20 h-1.5 ${underlineColorMap[color]} mx-auto rounded-full mb-4`}
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
       />
       {subtitle && (
-        <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+        <motion.p
+          className="text-text-secondary text-lg max-w-2xl mx-auto"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
           {subtitle}
-        </p>
+        </motion.p>
       )}
-    </motion.div>
+    </div>
   );
 }

@@ -18,7 +18,9 @@ export default function Footer() {
         {/* Left - Copyright */}
         <div className="text-center md:text-left">
           <p className="font-heading font-bold text-lg mb-1">Bevan.</p>
-          <p className="text-sm text-text-secondary">{t("copyright")}</p>
+          <p className="text-sm text-text-secondary">
+            {t("copyright", { year: new Date().getFullYear() })}
+          </p>
         </div>
 
         {/* Center - Built with */}

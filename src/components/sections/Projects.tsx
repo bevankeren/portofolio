@@ -7,6 +7,7 @@ import { ExternalLink, Lock } from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Badge from "@/components/ui/Badge";
+import TiltCard from "@/components/ui/TiltCard";
 import { projects } from "@/lib/data";
 
 const filterActiveClasses = {
@@ -58,9 +59,15 @@ export default function Projects() {
         />
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        <motion.div
+          className="flex flex-wrap justify-center gap-3 mb-10"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+        >
           {filters.map((filter) => (
-            <button
+            <motion.button
               key={filter.key}
               onClick={() => setActiveFilter(filter.key)}
               className={`px-4 py-2 border-2 border-black rounded-neo font-heading font-bold text-sm transition-all ${
@@ -68,11 +75,13 @@ export default function Projects() {
                   ? filterActiveClasses[filter.key as keyof typeof filterActiveClasses]
                   : "bg-surface hover:shadow-neo-sm"
               }`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               {filter.label}
-            </button>
+            </motion.button>
           ))}
-        </div>
+        </motion.div>
 
         {/* Project Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -85,70 +94,83 @@ export default function Projects() {
               return (
                 <motion.div
                   key={project.id}
-                  className={`neo-card border-t-[6px] ${borderClass} relative`}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.9, y: -10 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
                   layout
                 >
-                  {/* Placeholder badge */}
-                  {content.badge && (
-                    <div className="absolute top-4 right-4">
-                      <Badge color="yellow">{content.badge}</Badge>
+                  <TiltCard
+                    className={`neo-card border-t-[6px] ${borderClass} relative`}
+                  >
+                    {/* Placeholder badge */}
+                    {content.badge && (
+                      <div className="absolute top-4 right-4">
+                        <Badge color="yellow">{content.badge}</Badge>
+                      </div>
+                    )}
+
+                    {/* Project thumbnail placeholder */}
+                    <div className="w-full h-40 bg-gray-100 border-2 border-black rounded-neo mb-4 flex items-center justify-center overflow-hidden">
+                      {project.isPlaceholder ? (
+                        <Lock size={32} className="text-gray-400" />
+                      ) : (
+                        <motion.span
+                          className="text-4xl"
+                          animate={{ rotate: [0, 5, -5, 0] }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                          }}
+                        >
+                          🤖
+                        </motion.span>
+                      )}
                     </div>
-                  )}
 
-                  {/* Project thumbnail placeholder */}
-                  <div className="w-full h-40 bg-gray-100 border-2 border-black rounded-neo mb-4 flex items-center justify-center">
-                    {project.isPlaceholder ? (
-                      <Lock size={32} className="text-gray-400" />
-                    ) : (
-                      <span className="text-4xl">🤖</span>
-                    )}
-                  </div>
+                    <h3 className="font-heading font-bold text-lg mb-2">
+                      {content.title}
+                    </h3>
+                    <p className="text-text-secondary text-sm mb-4 leading-relaxed">
+                      {content.desc}
+                    </p>
 
-                  <h3 className="font-heading font-bold text-lg mb-2">
-                    {content.title}
-                  </h3>
-                  <p className="text-text-secondary text-sm mb-4 leading-relaxed">
-                    {content.desc}
-                  </p>
+                    {/* Tech badges */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.tech.map((tech) => (
+                        <Badge key={tech} color={badgeColor}>
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
 
-                  {/* Tech badges */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech) => (
-                      <Badge key={tech} color={badgeColor}>
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-
-                  {/* Links */}
-                  <div className="flex gap-3">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-sm font-bold hover:text-accent-blue transition-colors"
-                      >
-                        <GithubIcon size={16} />
-                        {t("source_code")}
-                      </a>
-                    )}
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-sm font-bold hover:text-accent-green transition-colors"
-                      >
-                        <ExternalLink size={16} />
-                        {t("live_demo")}
-                      </a>
-                    )}
-                  </div>
+                    {/* Links */}
+                    <div className="flex gap-3">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1.5 text-sm font-bold hover:text-accent-blue transition-colors"
+                        >
+                          <GithubIcon size={16} />
+                          {t("source_code")}
+                        </a>
+                      )}
+                      {project.live && (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1.5 text-sm font-bold hover:text-accent-green transition-colors"
+                        >
+                          <ExternalLink size={16} />
+                          {t("live_demo")}
+                        </a>
+                      )}
+                    </div>
+                  </TiltCard>
                 </motion.div>
               );
             })}

@@ -8,7 +8,7 @@ export const personalInfo = {
   github: "https://github.com/bevankeren",
   discord: "Beverly Hub",
   email: "muhammadbevanalqarana@gmail.com",
-  linkedin: "#", // TODO: Replace with real LinkedIn URL
+  linkedin: "https://linkedin.com/in/bevanalqarana", // Update with actual LinkedIn URL
   whatsapp: "https://wa.me/6287717896916",
 };
 
