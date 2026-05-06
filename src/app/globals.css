@@ -22,27 +22,49 @@
   }
 
   .neo-card {
-    @apply neo-border neo-shadow bg-surface p-6 transition-all duration-200;
+    @apply neo-border neo-shadow bg-surface p-6 transition-all duration-300;
   }
 
   .neo-card:hover {
-    @apply shadow-neo-hover -translate-x-[2px] -translate-y-[2px];
+    @apply shadow-neo-hover;
+    transform: translate(-3px, -3px);
   }
 
   .neo-btn {
-    @apply neo-border neo-shadow px-6 py-3 font-heading font-bold text-sm uppercase tracking-wide transition-all duration-150;
+    @apply neo-border neo-shadow px-6 py-3 font-heading font-bold text-sm uppercase tracking-wide transition-all duration-200;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .neo-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .neo-btn:hover::before {
+    opacity: 1;
   }
 
   .neo-btn:hover {
-    @apply shadow-neo-hover -translate-x-[2px] -translate-y-[2px];
+    @apply shadow-neo-hover;
+    transform: translate(-3px, -3px);
   }
 
   .neo-btn:active {
-    @apply shadow-neo-active translate-x-[4px] translate-y-[4px];
+    @apply shadow-neo-active;
+    transform: translate(4px, 4px);
   }
 
   .neo-badge {
-    @apply inline-flex items-center px-3 py-1 border-2 border-black rounded-full text-xs font-bold font-heading;
+    @apply inline-flex items-center px-3 py-1 border-2 border-black rounded-full text-xs font-bold font-heading transition-all duration-200;
+  }
+
+  .neo-badge:hover {
+    transform: translateY(-2px) scale(1.05);
   }
 
   .section-padding {
@@ -83,4 +105,24 @@ html {
   background: #1A1A1A;
   border: 2px solid #FFFDF7;
   border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3B82F6;
+}
+
+/* Selection styling */
+::selection {
+  background: #3B82F6;
+  color: white;
+}
+
+/* Glow animation for special elements */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 40px rgba(59, 130, 246, 0.2); }
+}
+
+.glow-blue {
+  animation: glow-pulse 3s ease-in-out infinite;
 }

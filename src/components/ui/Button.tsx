@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
@@ -30,6 +31,21 @@ export default function Button({
   className = "",
   type = "button",
 }: ButtonProps) {
+  const ref = useRef<HTMLAnchorElement & HTMLButtonElement>(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    setPosition({ x: x * 0.15, y: y * 0.15 });
+  };
+
+  const handleMouseLeave = () => {
+    setPosition({ x: 0, y: 0 });
+  };
+
   const baseClasses = "neo-btn inline-flex items-center justify-center gap-2";
 
   const variantClasses = {
@@ -43,10 +59,15 @@ export default function Button({
   if (href) {
     return (
       <motion.a
+        ref={ref}
         href={href}
         className={classes}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        animate={{ x: position.x, y: position.y }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.92 }}
+        transition={{ type: "spring" as const, stiffness: 400, damping: 17 }}
         target={href.startsWith("http") ? "_blank" : undefined}
         rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
       >
@@ -57,11 +78,16 @@ export default function Button({
 
   return (
     <motion.button
+      ref={ref}
       type={type}
       onClick={onClick}
       className={classes}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      animate={{ x: position.x, y: position.y }}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.92 }}
+      transition={{ type: "spring" as const, stiffness: 400, damping: 17 }}
     >
       {children}
     </motion.button>

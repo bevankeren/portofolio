@@ -11,21 +11,23 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.08,
+      staggerChildren: 0.06,
+      delayChildren: 0.2,
     },
   },
 };
 
 const badgeVariants = {
-  hidden: { opacity: 0, scale: 0.6, y: 10 },
+  hidden: { opacity: 0, scale: 0, y: 20, rotate: -10 },
   visible: {
     opacity: 1,
     scale: 1,
     y: 0,
+    rotate: 0,
     transition: {
       type: "spring" as const,
-      stiffness: 200,
-      damping: 15,
+      stiffness: 260,
+      damping: 12,
     },
   },
 };
@@ -40,15 +42,15 @@ export default function Skills() {
     { key: "tools", label: t("cat_tools"), color: "purple" as const, dotClass: "bg-accent-purple", data: skills.tools },
   ];
 
-  // Alternate animation directions
+  // Alternate animation directions - more dramatic
   const getCardAnimation = (index: number) => {
-    const directions = [
-      { x: -30, y: 0 },
-      { x: 30, y: 0 },
-      { x: -30, y: 0 },
-      { x: 30, y: 0 },
+    const animations = [
+      { x: -60, rotate: -3 },
+      { x: 60, rotate: 3 },
+      { x: -60, rotate: -3 },
+      { x: 60, rotate: 3 },
     ];
-    return directions[index];
+    return animations[index];
   };
 
   return (
@@ -62,21 +64,36 @@ export default function Skills() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {categories.map((category, catIndex) => {
-            const direction = getCardAnimation(catIndex);
+            const anim = getCardAnimation(catIndex);
             return (
               <motion.div
                 key={category.key}
                 className="neo-card"
-                initial={{ opacity: 0, x: direction.x }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: anim.x, rotate: anim.rotate }}
+                whileInView={{ opacity: 1, x: 0, rotate: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: catIndex * 0.1 }}
-                whileHover={{ y: -3 }}
+                transition={{
+                  duration: 0.6,
+                  delay: catIndex * 0.12,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                }}
+                whileHover={{
+                  y: -6,
+                  boxShadow: "10px 10px 0px #000",
+                  transition: { duration: 0.2 },
+                }}
               >
                 <h3 className="font-heading font-bold text-lg mb-4 flex items-center gap-2">
                   <motion.span
                     className={`w-3 h-3 rounded-full ${category.dotClass}`}
-                    animate={{ scale: [1, 1.3, 1] }}
+                    animate={{
+                      scale: [1, 1.5, 1],
+                      boxShadow: [
+                        "0 0 0 0 currentColor",
+                        "0 0 0 8px transparent",
+                        "0 0 0 0 transparent",
+                      ],
+                    }}
                     transition={{
                       duration: 2,
                       repeat: Infinity,
@@ -93,7 +110,16 @@ export default function Skills() {
                   viewport={{ once: true }}
                 >
                   {category.data.map((skill) => (
-                    <motion.div key={skill} variants={badgeVariants}>
+                    <motion.div
+                      key={skill}
+                      variants={badgeVariants}
+                      whileHover={{
+                        scale: 1.15,
+                        rotate: Math.random() > 0.5 ? 3 : -3,
+                        y: -3,
+                      }}
+                      whileTap={{ scale: 0.9 }}
+                    >
                       <Badge color={category.color}>{skill}</Badge>
                     </motion.div>
                   ))}
