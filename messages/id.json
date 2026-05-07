@@ -50,25 +50,12 @@
   "projects": {
     "title": "Proyek",
     "subtitle": "Koleksi proyek yang menunjukkan kemampuan saya",
-    "filter_all": "Semua",
-    "filter_data": "Data",
-    "filter_business": "Bisnis",
-    "filter_technical": "Teknis",
     "source_code": "Source Code",
     "live_demo": "Live Demo",
     "project1_title": "Discord Bot - Sambung Kata",
-    "project1_desc": "Bot Discord untuk game sambung kata di server Beverly Hub dengan database kamus bahasa Indonesia. Bot memvalidasi kata, melacak skor, dan mengelola giliran pemain.",
+    "project1_desc": "Bot Discord untuk game sambung kata di server Beverly Hub dengan database kamus bahasa Indonesia. Bot memvalidasi kata, melacak skor, dan mengelola giliran pemain secara otomatis.",
     "project2_title": "EskrimKuy Admin Panel",
-    "project2_desc": "Admin panel untuk manajemen toko es krim EskrimKuy. Dilengkapi dashboard real-time dengan grafik pendapatan, statistik transaksi, perbandingan antar cabang, dan chatbot AI yang menjawab pertanyaan berdasarkan data bisnis aktual dari Supabase.",
-    "project3_title": "Sales Data Analysis Dashboard",
-    "project3_desc": "Dashboard analisis data penjualan dengan visualisasi interaktif menggunakan pivot table dan chart.",
-    "project3_badge": "Akan Diambil Kelak",
-    "project4_title": "Network Infrastructure Design",
-    "project4_desc": "Simulasi desain jaringan komputer untuk lingkungan kantor menggunakan Cisco Packet Tracer.",
-    "project4_badge": "Akan Diambil Kelak",
-    "project5_title": "Business Process Documentation",
-    "project5_desc": "Dokumentasi alur proses bisnis menggunakan flowchart dan requirement list dengan notasi BPMN.",
-    "project5_badge": "Akan Diambil Kelak"
+    "project2_desc": "Admin panel untuk manajemen toko es krim EskrimKuy. Dilengkapi dashboard real-time dengan grafik pendapatan, statistik transaksi, perbandingan antar cabang, dan chatbot AI yang menjawab pertanyaan berdasarkan data bisnis aktual dari Supabase. Dibangun dengan Next.js dan didukung workflow automation n8n."
   },
   "skills": {
     "title": "Keahlian",

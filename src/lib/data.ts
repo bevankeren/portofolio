@@ -19,7 +19,7 @@ export const projects = [
     tech: ["JavaScript", "Discord.js", "Node.js"],
     github: "https://github.com/bevankeren/sambung-kata",
     live: null,
-    image: "/images/projects/discord-bot.png",
+    images: [],
     isPlaceholder: false,
   },
   {
@@ -28,35 +28,11 @@ export const projects = [
     tech: ["Next.js", "Tailwind CSS", "Supabase", "n8n", "Recharts"],
     github: "https://github.com/bevankeren/eskrimkuy-admin-panel",
     live: "https://eskrimkuy-admin-panel.vercel.app",
-    image: "/images/projects/eskrimkuy.png",
+    images: [
+      "/images/projects/eskrimkuy-1.png",
+      "/images/projects/eskrimkuy-2.png",
+    ],
     isPlaceholder: false,
-  },
-  {
-    id: 3,
-    category: "data",
-    tech: ["Excel", "Pivot Table", "Chart", "Power BI"],
-    github: null,
-    live: null,
-    image: "/images/projects/dashboard.png",
-    isPlaceholder: true,
-  },
-  {
-    id: 4,
-    category: "technical",
-    tech: ["Cisco Packet Tracer", "VLAN", "Routing"],
-    github: null,
-    live: null,
-    image: "/images/projects/network.png",
-    isPlaceholder: true,
-  },
-  {
-    id: 5,
-    category: "business",
-    tech: ["Draw.io", "Google Docs", "BPMN"],
-    github: null,
-    live: null,
-    image: "/images/projects/bpmn.png",
-    isPlaceholder: true,
   },
 ];
 
