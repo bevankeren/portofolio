@@ -15,15 +15,6 @@ export const personalInfo = {
 export const projects = [
   {
     id: 1,
-    category: "technical",
-    tech: ["JavaScript", "Discord.js", "Node.js"],
-    github: "https://github.com/bevankeren/sambung-kata",
-    live: null,
-    images: [],
-    isPlaceholder: false,
-  },
-  {
-    id: 2,
     category: "business",
     tech: ["Next.js", "Tailwind CSS", "Supabase", "n8n", "Recharts"],
     github: "https://github.com/bevankeren/eskrimkuy-admin-panel",
@@ -35,7 +26,7 @@ export const projects = [
     isPlaceholder: false,
   },
   {
-    id: 3,
+    id: 2,
     category: "data",
     tech: ["Python", "Pandas", "Matplotlib"],
     github: "https://github.com/bevankeren/medical-appointment-analysis",

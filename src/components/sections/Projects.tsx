@@ -24,7 +24,6 @@ export default function Projects() {
   const projectContent = [
     { title: t("project1_title"), desc: t("project1_desc") },
     { title: t("project2_title"), desc: t("project2_desc") },
-    { title: t("project3_title"), desc: t("project3_desc") },
   ];
 
   return (
