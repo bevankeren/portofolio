@@ -187,7 +187,7 @@ export default function Hero() {
             </div>
 
             <div className="absolute -bottom-4 left-6 z-20 rounded-full border-2 border-black bg-accent-blue px-5 py-2 font-heading text-sm font-black text-white shadow-neo-sm">
-              IELTS Certified
+              IELTS + BNSP Certified
             </div>
           </div>
         </motion.div>

@@ -30,9 +30,9 @@
     "hard_skills": ["Networking", "Troubleshooting", "Microsoft Excel", "Basic SQL", "Supabase", "n8n Automation", "Flowchart", "Documentation", "Discord Bot Scripting"],
     "soft_title": "Soft Skills",
     "soft_skills": ["English Communication", "Analytical Thinking", "Problem Solving", "Teamwork", "Adaptability", "Attention to Detail"],
-    "language_title": "English Proficiency",
-    "language_desc": "Confident English user dengan sertifikat IELTS. Siap untuk dokumentasi, komunikasi, dan interview berbahasa Inggris.",
-    "ielts_label": "IELTS Certified",
+    "language_title": "Sertifikasi",
+    "language_desc": "Bersertifikat IELTS untuk komunikasi dan dokumentasi berbahasa Inggris. Bersertifikat BNSP KKNI Level 2 Teknik Komputer dan Jaringan — kompetensi nasional tervalidasi di bidang jaringan.",
+    "ielts_label": "IELTS + BNSP",
     "profile_tag_1": "Fast Learner",
     "profile_tag_2": "Detail-Oriented",
     "profile_tag_3": "Tech + Analysis"
@@ -82,24 +82,21 @@
     "title": "Pendidikan",
     "subtitle": "Perjalanan akademis saya",
     "uni_name": "Cakrawala University",
-    "uni_period": "2024 - Sekarang",
+    "uni_period": "2025 - Sekarang",
     "uni_desc": "Mahasiswa aktif semester 2. Fokus belajar analisis bisnis, data, dan teknologi pendukung.",
     "school_name": "SMK Perguruan Cikini 3",
     "school_major": "Teknik Komputer dan Jaringan (TKJ)",
-    "school_period": "2021 - 2024",
-    "school_desc": "Lulus dengan kompetensi di bidang jaringan komputer, troubleshooting, dan administrasi sistem."
+    "school_period": "2022 - 2025",
+    "school_desc": "Lulus dengan kompetensi di bidang jaringan komputer, troubleshooting, dan administrasi sistem. Bersertifikasi BNSP KKNI Level 2 Teknik Komputer dan Jaringan."
   },
   "certificates": {
     "title": "Sertifikat",
-    "subtitle": "Sertifikasi dan target sertifikasi yang mendukung profil saya",
-    "coming_soon": "Akan Diambil Kelak",
-    "placeholder_text": "Sertifikasi ini menjadi target belajar berikutnya untuk memperkuat skill.",
+    "subtitle": "Sertifikasi profesional yang memvalidasi kompetensi saya",
     "verified": "Certified",
     "cert1": "IELTS English Proficiency",
-    "cert1_desc": "Sertifikat kemampuan bahasa Inggris untuk komunikasi akademik dan profesional.",
-    "cert2": "Google Data Analytics",
-    "cert3": "Cisco CCNA",
-    "cert4": "Microsoft Office Specialist"
+    "cert1_desc": "Sertifikat kemampuan bahasa Inggris untuk komunikasi akademik dan profesional. Menunjukkan kesiapan bekerja di lingkungan berbahasa Inggris.",
+    "cert2": "BNSP KKNI Level 2 — Teknik Komputer dan Jaringan",
+    "cert2_desc": "Sertifikasi profesi nasional (BNSP) pada KKNI Level 2 untuk Teknik Komputer dan Jaringan. Memvalidasi kompetensi instalasi, konfigurasi, dan troubleshooting jaringan."
   },
   "github": {
     "title": "GitHub",

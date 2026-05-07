@@ -30,9 +30,9 @@
     "hard_skills": ["Networking", "Troubleshooting", "Microsoft Excel", "Basic SQL", "Supabase", "n8n Automation", "Flowchart", "Documentation", "Discord Bot Scripting"],
     "soft_title": "Soft Skills",
     "soft_skills": ["English Communication", "Analytical Thinking", "Problem Solving", "Teamwork", "Adaptability", "Attention to Detail"],
-    "language_title": "English Proficiency",
-    "language_desc": "Confident English user with an IELTS certificate. Ready for documentation, communication, and interviews in English.",
-    "ielts_label": "IELTS Certified",
+    "language_title": "Certifications",
+    "language_desc": "IELTS certified for English communication and documentation. BNSP KKNI Level 2 certified in Computer Network Engineering — validated national competency in networking.",
+    "ielts_label": "IELTS + BNSP",
     "profile_tag_1": "Fast Learner",
     "profile_tag_2": "Detail-Oriented",
     "profile_tag_3": "Tech + Analysis"
@@ -82,24 +82,21 @@
     "title": "Education",
     "subtitle": "My academic journey",
     "uni_name": "Cakrawala University",
-    "uni_period": "2024 - Present",
+    "uni_period": "2025 - Present",
     "uni_desc": "Active 2nd semester student. Focused on learning business analysis, data, and supporting technologies.",
     "school_name": "SMK Perguruan Cikini 3",
     "school_major": "Computer Network Engineering (TKJ)",
-    "school_period": "2021 - 2024",
-    "school_desc": "Graduated with competencies in computer networking, troubleshooting, and system administration."
+    "school_period": "2022 - 2025",
+    "school_desc": "Graduated with competencies in computer networking, troubleshooting, and system administration. Certified BNSP KKNI Level 2 in Computer Network Engineering."
   },
   "certificates": {
     "title": "Certificates",
-    "subtitle": "Certifications and target certifications that support my profile",
-    "coming_soon": "Planned For Later",
-    "placeholder_text": "This certification is part of my future learning target to strengthen my skills.",
+    "subtitle": "Professional certifications that validate my competencies",
     "verified": "Certified",
     "cert1": "IELTS English Proficiency",
-    "cert1_desc": "English proficiency certificate for academic and professional communication.",
-    "cert2": "Google Data Analytics",
-    "cert3": "Cisco CCNA",
-    "cert4": "Microsoft Office Specialist"
+    "cert1_desc": "English proficiency certificate for academic and professional communication. Demonstrates readiness for English-based work environments.",
+    "cert2": "BNSP KKNI Level 2 — Computer Network Engineering",
+    "cert2_desc": "National professional certification (BNSP) at KKNI Level 2 for Computer Network Engineering. Validates competency in network installation, configuration, and troubleshooting."
   },
   "github": {
     "title": "GitHub",

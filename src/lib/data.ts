@@ -88,7 +88,5 @@ export const skills = {
 
 export const certificates = [
   { id: 1, isPlaceholder: false },
-  { id: 2, isPlaceholder: true },
-  { id: 3, isPlaceholder: true },
-  { id: 4, isPlaceholder: true },
+  { id: 2, isPlaceholder: false },
 ];
