@@ -55,7 +55,9 @@
     "project1_title": "Discord Bot - Sambung Kata",
     "project1_desc": "Bot Discord untuk game sambung kata di server Beverly Hub dengan database kamus bahasa Indonesia. Bot memvalidasi kata, melacak skor, dan mengelola giliran pemain secara otomatis.",
     "project2_title": "EskrimKuy Admin Panel",
-    "project2_desc": "Admin panel untuk manajemen toko es krim EskrimKuy. Dilengkapi dashboard real-time dengan grafik pendapatan, statistik transaksi, perbandingan antar cabang, dan chatbot AI yang menjawab pertanyaan berdasarkan data bisnis aktual dari Supabase. Dibangun dengan Next.js dan didukung workflow automation n8n."
+    "project2_desc": "Admin panel untuk manajemen toko es krim EskrimKuy. Dilengkapi dashboard real-time dengan grafik pendapatan, statistik transaksi, perbandingan antar cabang, dan chatbot AI yang menjawab pertanyaan berdasarkan data bisnis aktual dari Supabase. Dibangun dengan Next.js dan didukung workflow automation n8n.",
+    "project3_title": "Analisis Ketidakhadiran Janji Medis",
+    "project3_desc": "Analisis data dari 110.527 catatan janji pertemuan medis di rumah sakit Brasil untuk memahami mengapa pasien tidak hadir. Mencakup EDA, data cleaning, feature engineering, dan business insights. Temuan utama: waktu tunggu yang lebih lama menggandakan tingkat ketidakhadiran, SMS pengingat perlu diperbaiki, dan distribusi jadwal appointment tidak merata di hari kerja."
   },
   "skills": {
     "title": "Keahlian",

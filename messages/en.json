@@ -55,7 +55,9 @@
     "project1_title": "Discord Bot - Word Chain",
     "project1_desc": "A Discord bot for the word chain game on Beverly Hub server with an Indonesian dictionary database. The bot validates words, tracks scores, and manages player turns automatically.",
     "project2_title": "EskrimKuy Admin Panel",
-    "project2_desc": "Admin panel for EskrimKuy ice cream shop management. Features a real-time dashboard with revenue charts, transaction stats, branch comparison, and an AI chatbot that answers questions based on actual business data from Supabase. Built with Next.js and powered by n8n workflow automation."
+    "project2_desc": "Admin panel for EskrimKuy ice cream shop management. Features a real-time dashboard with revenue charts, transaction stats, branch comparison, and an AI chatbot that answers questions based on actual business data from Supabase. Built with Next.js and powered by n8n workflow automation.",
+    "project3_title": "Medical Appointment No-Show Analysis",
+    "project3_desc": "Data analysis of 110,527 medical appointment records from a hospital in Brazil to understand why patients miss their appointments. Includes EDA, data cleaning, feature engineering, and business insights. Key findings: longer wait times double no-show rates, SMS reminders need improvement, and appointment scheduling is unevenly distributed across weekdays."
   },
   "skills": {
     "title": "Skills",

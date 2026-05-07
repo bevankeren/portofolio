@@ -34,6 +34,18 @@ export const projects = [
     ],
     isPlaceholder: false,
   },
+  {
+    id: 3,
+    category: "data",
+    tech: ["Python", "Pandas", "Matplotlib"],
+    github: "https://github.com/bevankeren/medical-appointment-analysis",
+    live: null,
+    images: [
+      "/images/projects/medical-appointment-1.png",
+      "/images/projects/medical-appointment-2.png",
+    ],
+    isPlaceholder: false,
+  },
 ];
 
 export const skills = {

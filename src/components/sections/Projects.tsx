@@ -9,8 +9,14 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import Badge from "@/components/ui/Badge";
 import { projects } from "@/lib/data";
 
-const cardBorderColors = ["border-t-accent-blue", "border-t-accent-pink"] as const;
-const badgeColors = ["blue", "pink"] as const;
+const cardBorderColors = ["border-t-accent-blue", "border-t-accent-pink", "border-t-accent-green"] as const;
+const badgeColors = ["blue", "pink", "green"] as const;
+
+const categoryEmojis: Record<string, string> = {
+  technical: "🤖",
+  business: "📊",
+  data: "📈",
+};
 
 export default function Projects() {
   const t = useTranslations("projects");
@@ -18,6 +24,7 @@ export default function Projects() {
   const projectContent = [
     { title: t("project1_title"), desc: t("project1_desc") },
     { title: t("project2_title"), desc: t("project2_desc") },
+    { title: t("project3_title"), desc: t("project3_desc") },
   ];
 
   return (
@@ -63,10 +70,10 @@ export default function Projects() {
                   </div>
                 )}
 
-                {/* No images fallback (Discord Bot) */}
+                {/* No images fallback */}
                 {project.images.length === 0 && (
                   <div className="h-40 border-2 border-black rounded-neo mb-5 bg-gray-50 flex items-center justify-center">
-                    <span className="text-5xl">🤖</span>
+                    <span className="text-5xl">{categoryEmojis[project.category] || "💻"}</span>
                   </div>
                 )}
 
