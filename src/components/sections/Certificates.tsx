@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ShieldCheck, Languages, Network } from "lucide-react";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -16,6 +17,7 @@ export default function Certificates() {
       bgClass: "bg-accent-pink/10",
       iconClass: "bg-accent-pink text-white",
       icon: Languages,
+      image: null,
     },
     {
       key: "cert2",
@@ -24,6 +26,7 @@ export default function Certificates() {
       bgClass: "bg-accent-green/10",
       iconClass: "bg-accent-green text-white",
       icon: Network,
+      image: "/images/certificates/bnsp.jpeg",
     },
   ];
 
@@ -46,11 +49,23 @@ export default function Certificates() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <div
-                className={`w-16 h-16 mx-auto mb-4 border-2 border-black rounded-full ${cert.iconClass} flex items-center justify-center shadow-neo-sm`}
-              >
-                <cert.icon size={28} />
-              </div>
+              {cert.image && (
+                <div className="relative w-full h-40 mb-4 border-2 border-black rounded-neo overflow-hidden">
+                  <Image
+                    src={cert.image}
+                    alt={t(cert.key)}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              )}
+              {!cert.image && (
+                <div
+                  className={`w-16 h-16 mx-auto mb-4 border-2 border-black rounded-full ${cert.iconClass} flex items-center justify-center shadow-neo-sm`}
+                >
+                  <cert.icon size={28} />
+                </div>
+              )}
               <h3 className="font-heading font-black text-base mb-2">
                 {t(cert.key)}
               </h3>

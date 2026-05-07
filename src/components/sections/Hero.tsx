@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Download, FolderOpen, Mail, Sparkles } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
 import Button from "@/components/ui/Button";
@@ -171,18 +172,14 @@ export default function Hero() {
             <div className="absolute right-8 -top-5 h-16 w-16 rounded-neo border-3 border-black bg-accent-purple" />
 
             <div className="relative z-10 border-3 border-black rounded-neo shadow-neo bg-accent-yellow p-4 rotate-[2deg]">
-              <div className="h-[470px] md:h-[540px] border-3 border-black rounded-neo bg-white overflow-hidden flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="mx-auto mb-5 flex h-40 w-40 items-center justify-center rounded-full border-3 border-black bg-accent-blue/20">
-                    <span className="font-heading text-5xl font-black">BA</span>
-                  </div>
-                  <p className="font-heading text-lg font-black">
-                    Photo Placeholder
-                  </p>
-                  <p className="mt-2 text-sm text-text-secondary">
-                    Replace with your portrait photo
-                  </p>
-                </div>
+              <div className="relative h-[470px] md:h-[540px] border-3 border-black rounded-neo bg-white overflow-hidden">
+                <Image
+                  src="/images/potoprofil.jpeg"
+                  alt="Muhammad Bevan Alqarana"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
             </div>
 
