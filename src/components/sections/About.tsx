@@ -36,10 +36,10 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-8 items-start">
           <motion.div
             className="neo-card bg-accent-yellow/20 relative overflow-hidden"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
           >
             <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full border-3 border-black bg-accent-blue" />
             <div className="absolute -bottom-8 right-20 h-20 w-20 rotate-12 border-3 border-black bg-accent-pink" />
@@ -94,7 +94,7 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
             >
               <div className="mb-4 flex items-center gap-3">
                 <div className="rounded-neo border-2 border-black bg-accent-blue p-3 text-white">
@@ -116,7 +116,7 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.4, delay: 0.15 }}
             >
               <div className="mb-4 flex items-center gap-3">
                 <div className="rounded-neo border-2 border-black bg-accent-green p-3 text-white">
@@ -139,7 +139,7 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
             >
               <div className="flex items-start gap-4">
                 <div className="rounded-neo border-2 border-black bg-accent-pink p-3 text-white">

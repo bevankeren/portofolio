@@ -22,9 +22,12 @@ const cardBorderClasses = [
   "border-t-accent-yellow",
   "border-t-accent-blue",
   "border-t-accent-pink",
+  "border-t-accent-purple",
 ] as const;
 
-const cardBadgeColors = ["green", "yellow", "blue", "pink"] as const;
+const cardBadgeColors = ["green", "yellow", "blue", "pink", "purple"] as const;
+
+const projectEmojis = ["🤖", "🍦", "📊", "🌐", "📋"] as const;
 
 export default function Projects() {
   const t = useTranslations("projects");
@@ -44,9 +47,10 @@ export default function Projects() {
 
   const projectContent = [
     { title: t("project1_title"), desc: t("project1_desc"), badge: null },
-    { title: t("project2_title"), desc: t("project2_desc"), badge: t("project2_badge") },
+    { title: t("project2_title"), desc: t("project2_desc"), badge: null },
     { title: t("project3_title"), desc: t("project3_desc"), badge: t("project3_badge") },
     { title: t("project4_title"), desc: t("project4_desc"), badge: t("project4_badge") },
+    { title: t("project5_title"), desc: t("project5_desc"), badge: t("project5_badge") },
   ];
 
   return (
@@ -64,22 +68,20 @@ export default function Projects() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.3 }}
         >
           {filters.map((filter) => (
-            <motion.button
+            <button
               key={filter.key}
               onClick={() => setActiveFilter(filter.key)}
-              className={`px-4 py-2 border-2 border-black rounded-neo font-heading font-bold text-sm transition-all ${
+              className={`px-4 py-2 border-2 border-black rounded-neo font-heading font-bold text-sm transition-all duration-200 hover:scale-105 active:scale-95 ${
                 activeFilter === filter.key
                   ? filterActiveClasses[filter.key as keyof typeof filterActiveClasses]
                   : "bg-surface hover:shadow-neo-sm"
               }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
             >
               {filter.label}
-            </motion.button>
+            </button>
           ))}
         </motion.div>
 
@@ -94,10 +96,10 @@ export default function Projects() {
               return (
                 <motion.div
                   key={project.id}
-                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.9, y: -10 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3, delay: index * 0.08 }}
                   layout
                 >
                   <TiltCard
@@ -115,17 +117,9 @@ export default function Projects() {
                       {project.isPlaceholder ? (
                         <Lock size={32} className="text-gray-400" />
                       ) : (
-                        <motion.span
-                          className="text-4xl"
-                          animate={{ rotate: [0, 5, -5, 0] }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                          }}
-                        >
-                          🤖
-                        </motion.span>
+                        <span className="text-4xl">
+                          {projectEmojis[project.id - 1] || "📁"}
+                        </span>
                       )}
                     </div>
 

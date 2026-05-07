@@ -6,32 +6,6 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import Badge from "@/components/ui/Badge";
 import { skills } from "@/lib/data";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.06,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const badgeVariants = {
-  hidden: { opacity: 0, scale: 0, y: 20, rotate: -10 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    rotate: 0,
-    transition: {
-      type: "spring" as const,
-      stiffness: 260,
-      damping: 12,
-    },
-  },
-};
-
 export default function Skills() {
   const t = useTranslations("skills");
 
@@ -41,17 +15,6 @@ export default function Skills() {
     { key: "technical", label: t("cat_technical"), color: "green" as const, dotClass: "bg-accent-green", data: skills.technical },
     { key: "tools", label: t("cat_tools"), color: "purple" as const, dotClass: "bg-accent-purple", data: skills.tools },
   ];
-
-  // Alternate animation directions - more dramatic
-  const getCardAnimation = (index: number) => {
-    const animations = [
-      { x: -60, rotate: -3 },
-      { x: 60, rotate: 3 },
-      { x: -60, rotate: -3 },
-      { x: 60, rotate: 3 },
-    ];
-    return animations[index];
-  };
 
   return (
     <section id="skills" className="section-padding dot-pattern">
@@ -63,70 +26,31 @@ export default function Skills() {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {categories.map((category, catIndex) => {
-            const anim = getCardAnimation(catIndex);
-            return (
-              <motion.div
-                key={category.key}
-                className="neo-card"
-                initial={{ opacity: 0, x: anim.x, rotate: anim.rotate }}
-                whileInView={{ opacity: 1, x: 0, rotate: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.6,
-                  delay: catIndex * 0.12,
-                  ease: [0.25, 0.46, 0.45, 0.94],
-                }}
-                whileHover={{
-                  y: -6,
-                  boxShadow: "10px 10px 0px #000",
-                  transition: { duration: 0.2 },
-                }}
-              >
-                <h3 className="font-heading font-bold text-lg mb-4 flex items-center gap-2">
-                  <motion.span
-                    className={`w-3 h-3 rounded-full ${category.dotClass}`}
-                    animate={{
-                      scale: [1, 1.5, 1],
-                      boxShadow: [
-                        "0 0 0 0 currentColor",
-                        "0 0 0 8px transparent",
-                        "0 0 0 0 transparent",
-                      ],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      delay: catIndex * 0.5,
-                    }}
-                  />
-                  {category.label}
-                </h3>
-                <motion.div
-                  className="flex flex-wrap gap-2"
-                  variants={containerVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                >
-                  {category.data.map((skill) => (
-                    <motion.div
-                      key={skill}
-                      variants={badgeVariants}
-                      whileHover={{
-                        scale: 1.15,
-                        rotate: Math.random() > 0.5 ? 3 : -3,
-                        y: -3,
-                      }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <Badge color={category.color}>{skill}</Badge>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </motion.div>
-            );
-          })}
+          {categories.map((category, catIndex) => (
+            <motion.div
+              key={category.key}
+              className="neo-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.4,
+                delay: catIndex * 0.1,
+              }}
+            >
+              <h3 className="font-heading font-bold text-lg mb-4 flex items-center gap-2">
+                <span className={`w-3 h-3 rounded-full ${category.dotClass}`} />
+                {category.label}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {category.data.map((skill) => (
+                  <Badge key={skill} color={category.color}>
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

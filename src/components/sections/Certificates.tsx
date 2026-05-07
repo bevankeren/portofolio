@@ -54,28 +54,16 @@ export default function Certificates() {
             <motion.div
               key={cert.key}
               className={`neo-card text-center border-t-[6px] ${cert.borderClass} ${cert.bgClass}`}
-              initial={{ opacity: 0, scale: 0.85, rotate: -3 }}
-              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.12,
-                type: "spring",
-                stiffness: 150,
-              }}
-              whileHover={{
-                y: -5,
-                rotate: 1,
-                transition: { duration: 0.2 },
-              }}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
             >
-              <motion.div
+              <div
                 className={`w-16 h-16 mx-auto mb-4 border-2 border-black rounded-full ${cert.iconClass} flex items-center justify-center shadow-neo-sm`}
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.6 }}
               >
                 {cert.verified ? <ShieldCheck size={30} /> : <Award size={28} />}
-              </motion.div>
+              </div>
               <h3 className="font-heading font-black text-base mb-2">
                 {t(cert.key)}
               </h3>

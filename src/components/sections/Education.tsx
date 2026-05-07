@@ -43,10 +43,10 @@ export default function Education() {
             <motion.div
               key={index}
               className="relative pl-10 pb-10 last:pb-0"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
             >
               {/* Timeline line */}
               {index < timeline.length - 1 && (

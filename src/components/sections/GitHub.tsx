@@ -35,7 +35,6 @@ function AnimatedCounter({
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
-      // Ease out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
       setCount(Math.floor(eased * value));
 
@@ -112,10 +111,10 @@ export default function GitHubSection() {
         <div className="max-w-3xl mx-auto">
           <motion.div
             className="neo-card text-center bg-accent-purple/10"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
           >
             <div className="w-24 h-24 mx-auto mb-6 border-3 border-black rounded-full bg-white flex items-center justify-center shadow-neo-sm">
               <GithubIcon size={40} />
@@ -131,10 +130,10 @@ export default function GitHubSection() {
                 <motion.div
                   key={card.label}
                   className={`p-4 border-2 border-black rounded-neo ${card.color} shadow-neo-sm`}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  transition={{ duration: 0.3, delay: index * 0.08 }}
                 >
                   <card.icon
                     size={20}
