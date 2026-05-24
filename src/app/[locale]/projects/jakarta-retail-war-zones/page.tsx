@@ -39,9 +39,9 @@ const methodologyIcons = [
 ];
 
 const findingAccentClasses = [
-  "border-red-500/70 bg-red-500/10",
-  "border-emerald-400/70 bg-emerald-400/10",
-  "border-blue-400/70 bg-blue-400/10",
+  "border-t-[6px] border-t-red-500 bg-surface",
+  "border-t-[6px] border-t-accent-green bg-surface",
+  "border-t-[6px] border-t-accent-blue bg-surface",
 ];
 
 function getLocale(locale: string): CaseStudyLocale {
@@ -77,79 +77,86 @@ export default function JakartaRetailWarZonesPage({ params }: PageProps) {
   const content = retailWarZonesContent[locale];
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#07111f] text-slate-100">
-      <section className="relative overflow-hidden border-b-3 border-black pt-24">
-        <Image
-          src="/assets/retail-war-zones/hero_map.png"
-          alt={content.gallery[0].alt}
-          fill
-          priority
-          className="object-cover opacity-35"
-        />
-        <div className="absolute inset-0 bg-[#07111f]/72" />
-        <div className="relative mx-auto max-w-6xl px-4 pb-14 pt-10 md:px-8 lg:px-16">
-          <Link
-            href="/"
-            className="mb-10 inline-flex items-center gap-2 text-sm font-bold text-slate-300 transition-colors hover:text-white"
-          >
-            <ArrowLeft size={16} />
-            {content.backLabel}
-          </Link>
+    <div className="min-h-screen overflow-x-hidden bg-background text-text-primary">
+      <section className="section-padding border-b-3 border-black bg-background pt-28 dot-pattern">
+        <div className="container-main grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+          <div>
+            <Link
+              href="/"
+              className="mb-8 inline-flex items-center gap-2 font-heading text-sm font-bold transition-colors hover:text-accent-blue"
+            >
+              <ArrowLeft size={16} />
+              {content.backLabel}
+            </Link>
 
-          <div className="max-w-4xl">
-            <p className="mb-4 inline-flex max-w-full rounded-neo border-2 border-accent-yellow bg-accent-yellow px-3 py-1 font-heading text-xs font-bold uppercase tracking-wide text-black">
+            <p className="mb-4 inline-flex max-w-full rounded-neo border-2 border-black bg-accent-yellow px-3 py-1 font-heading text-xs font-bold uppercase tracking-wide text-black shadow-neo-sm">
               {content.eyebrow}
             </p>
-            <h1 className="mb-4 break-words font-heading text-3xl font-bold leading-tight text-white sm:text-4xl md:text-6xl">
+            <h1 className="mb-4 break-words font-heading text-4xl font-bold leading-tight text-text-primary sm:text-5xl md:text-6xl">
               {content.title}
             </h1>
-            <p className="mb-5 max-w-3xl text-lg font-semibold text-slate-100 sm:text-xl md:text-2xl">
+            <p className="mb-5 max-w-3xl text-lg font-bold text-text-primary sm:text-xl md:text-2xl">
               {content.subtitle}
             </p>
-            <p className="max-w-3xl text-base leading-relaxed text-slate-300 md:text-lg">
+            <p className="max-w-3xl text-base leading-relaxed text-text-secondary md:text-lg">
               {content.description}
             </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a
+                href={retailWarZoneLinks.map}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="neo-btn inline-flex w-full items-center justify-center gap-2 bg-accent-blue text-white sm:w-auto"
+              >
+                <MapPinned size={18} />
+                {content.primaryCta}
+              </a>
+              <span className="inline-flex w-full cursor-not-allowed flex-wrap items-center justify-center gap-2 rounded-neo border-3 border-black bg-surface px-5 py-3 font-heading text-sm font-bold text-text-secondary shadow-neo-sm sm:w-auto">
+                <GithubIcon size={18} />
+                {content.githubCta}
+                <span className="rounded-full border-2 border-black bg-accent-yellow px-2 py-0.5 text-[10px] uppercase text-black">
+                  {content.pendingLabel}
+                </span>
+              </span>
+              <span className="inline-flex w-full cursor-not-allowed flex-wrap items-center justify-center gap-2 rounded-neo border-3 border-black bg-surface px-5 py-3 font-heading text-sm font-bold text-text-secondary shadow-neo-sm sm:w-auto">
+                <NotebookTabs size={18} />
+                {content.kaggleCta}
+                <span className="rounded-full border-2 border-black bg-accent-yellow px-2 py-0.5 text-[10px] uppercase text-black">
+                  {content.pendingLabel}
+                </span>
+              </span>
+            </div>
           </div>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <a
-              href={retailWarZoneLinks.map}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-neo border-2 border-accent-blue bg-accent-blue px-5 py-3 font-heading text-sm font-bold text-white shadow-neo-sm transition-transform hover:-translate-y-1 sm:w-auto"
-            >
-              <MapPinned size={18} />
-              {content.primaryCta}
-            </a>
-            <span className="inline-flex w-full cursor-not-allowed flex-wrap items-center justify-center gap-2 rounded-neo border-2 border-slate-500/70 bg-slate-900/70 px-5 py-3 font-heading text-sm font-bold text-slate-400 sm:w-auto">
-              <GithubIcon size={18} />
-              {content.githubCta}
-              <span className="rounded-full bg-slate-700 px-2 py-0.5 text-[10px] uppercase">
-                {content.pendingLabel}
-              </span>
-            </span>
-            <span className="inline-flex w-full cursor-not-allowed flex-wrap items-center justify-center gap-2 rounded-neo border-2 border-slate-500/70 bg-slate-900/70 px-5 py-3 font-heading text-sm font-bold text-slate-400 sm:w-auto">
-              <NotebookTabs size={18} />
-              {content.kaggleCta}
-              <span className="rounded-full bg-slate-700 px-2 py-0.5 text-[10px] uppercase">
-                {content.pendingLabel}
-              </span>
-            </span>
+          <div className="relative aspect-[16/11] overflow-hidden rounded-neo border-3 border-black bg-black shadow-neo">
+            <Image
+              src="/assets/retail-war-zones/hero_map.png"
+              alt={content.gallery[0].alt}
+              fill
+              priority
+              className="object-cover"
+              sizes="(min-width: 1024px) 45vw, 100vw"
+            />
           </div>
         </div>
       </section>
 
-      <section className="border-b border-slate-800 bg-[#0a1424] px-4 py-10 md:px-8 lg:px-16">
+      <section className="border-b-3 border-black bg-accent-blue/10 px-4 py-10 md:px-8 lg:px-16">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {content.kpis.map((kpi) => (
+          {content.kpis.map((kpi, index) => (
             <div
               key={kpi.label}
-              className="rounded-neo border border-slate-700 bg-[#101d31] p-5 shadow-[0_0_24px_rgba(59,130,246,0.08)]"
+              className={`neo-card p-5 ${
+                index % 2 === 0
+                  ? "border-t-[6px] border-t-red-500"
+                  : "border-t-[6px] border-t-accent-blue"
+              }`}
             >
-              <p className="font-heading text-3xl font-bold text-white">
+              <p className="font-heading text-3xl font-bold text-text-primary">
                 {kpi.value}
               </p>
-              <p className="mt-2 text-sm leading-relaxed text-slate-300">
+              <p className="mt-2 text-sm leading-relaxed text-text-secondary">
                 {kpi.label}
               </p>
             </div>
@@ -157,30 +164,30 @@ export default function JakartaRetailWarZonesPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="px-4 py-16 md:px-8 lg:px-16">
+      <section className="section-padding bg-surface">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <p className="mb-3 font-heading text-sm font-bold uppercase tracking-wide text-accent-yellow">
+            <p className="mb-3 inline-flex rounded-neo border-2 border-black bg-accent-yellow px-3 py-1 font-heading text-xs font-bold uppercase tracking-wide text-black">
               {content.businessQuestionTitle}
             </p>
-            <h2 className="font-heading text-3xl font-bold leading-tight text-white md:text-4xl">
+            <h2 className="font-heading text-3xl font-bold leading-tight text-text-primary md:text-4xl">
               {content.businessQuestion}
             </h2>
           </div>
-          <div className="rounded-neo border border-slate-700 bg-[#101d31] p-6">
-            <p className="mb-2 font-heading text-lg font-bold text-white">
+          <div className="neo-card border-l-[6px] border-l-accent-blue">
+            <p className="mb-2 font-heading text-lg font-bold text-text-primary">
               {content.executiveReadTitle}
             </p>
-            <p className="leading-relaxed text-slate-300">
+            <p className="leading-relaxed text-text-secondary">
               {content.executiveRead}
             </p>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-slate-800 bg-[#0a1424] px-4 py-16 md:px-8 lg:px-16">
+      <section className="section-padding border-y-3 border-black bg-background dot-pattern">
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-8 font-heading text-3xl font-bold text-white">
+          <h2 className="mb-8 font-heading text-3xl font-bold text-text-primary">
             {content.methodologyTitle}
           </h2>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -190,17 +197,17 @@ export default function JakartaRetailWarZonesPage({ params }: PageProps) {
               return (
                 <div
                   key={step}
-                  className="rounded-neo border border-slate-700 bg-[#101d31] p-5"
+                  className="neo-card p-5"
                 >
                   <div className="mb-4 flex items-center justify-between">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-neo border border-slate-600 bg-slate-900 text-accent-blue">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-neo border-2 border-black bg-accent-blue text-white">
                       <Icon size={18} />
                     </span>
-                    <span className="font-mono text-xs text-slate-500">
+                    <span className="font-mono text-xs font-bold text-text-secondary">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
-                  <p className="font-heading text-sm font-bold leading-snug text-white">
+                  <p className="font-heading text-sm font-bold leading-snug text-text-primary">
                     {step}
                   </p>
                 </div>
@@ -210,23 +217,23 @@ export default function JakartaRetailWarZonesPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="px-4 py-16 md:px-8 lg:px-16">
+      <section className="section-padding bg-surface">
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-8 font-heading text-3xl font-bold text-white">
+          <h2 className="mb-8 font-heading text-3xl font-bold text-text-primary">
             {content.findingsTitle}
           </h2>
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
             {content.findings.map((finding, index) => (
               <div
                 key={finding.title}
-                className={`rounded-neo border p-6 ${
+                className={`neo-card p-6 ${
                   findingAccentClasses[index] ?? findingAccentClasses[0]
                 }`}
               >
-                <h3 className="mb-3 font-heading text-xl font-bold text-white">
+                <h3 className="mb-3 font-heading text-xl font-bold text-text-primary">
                   {finding.title}
                 </h3>
-                <p className="leading-relaxed text-slate-300">
+                <p className="leading-relaxed text-text-secondary">
                   {finding.detail}
                 </p>
               </div>
@@ -235,16 +242,16 @@ export default function JakartaRetailWarZonesPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="border-y border-slate-800 bg-[#0a1424] px-4 py-16 md:px-8 lg:px-16">
+      <section className="section-padding border-y-3 border-black bg-accent-yellow/20">
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-8 font-heading text-3xl font-bold text-white">
+          <h2 className="mb-8 font-heading text-3xl font-bold text-text-primary">
             {content.galleryTitle}
           </h2>
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
             {content.gallery.map((item) => (
               <figure
                 key={item.src}
-                className="overflow-hidden rounded-neo border border-slate-700 bg-[#101d31]"
+                className="overflow-hidden rounded-neo border-3 border-black bg-surface shadow-neo"
               >
                 <div className="relative aspect-video">
                   <Image
@@ -255,7 +262,7 @@ export default function JakartaRetailWarZonesPage({ params }: PageProps) {
                     sizes="(min-width: 1024px) 50vw, 100vw"
                   />
                 </div>
-                <figcaption className="border-t border-slate-700 px-5 py-4 font-heading text-sm font-bold text-white">
+                <figcaption className="border-t-3 border-black px-5 py-4 font-heading text-sm font-bold text-text-primary">
                   {item.title}
                 </figcaption>
               </figure>
@@ -264,9 +271,9 @@ export default function JakartaRetailWarZonesPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="px-4 py-16 md:px-8 lg:px-16">
+      <section className="section-padding bg-surface">
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-8 font-heading text-3xl font-bold text-white">
+          <h2 className="mb-8 font-heading text-3xl font-bold text-text-primary">
             {content.outputsTitle}
           </h2>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -276,20 +283,20 @@ export default function JakartaRetailWarZonesPage({ params }: PageProps) {
                 href={output.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group rounded-neo border border-slate-700 bg-[#101d31] p-6 transition-colors hover:border-accent-blue"
+                className="neo-card group p-6"
               >
                 <div className="mb-4 flex items-start justify-between gap-4">
                   <div>
-                    <h3 className="font-heading text-xl font-bold text-white">
+                    <h3 className="font-heading text-xl font-bold text-text-primary">
                       {output.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                    <p className="mt-2 text-sm leading-relaxed text-text-secondary">
                       {output.description}
                     </p>
                   </div>
                   <ArrowUpRight
                     size={22}
-                    className="shrink-0 text-slate-500 transition-colors group-hover:text-accent-blue"
+                    className="shrink-0 text-text-secondary transition-colors group-hover:text-accent-blue"
                   />
                 </div>
                 <span className="font-heading text-sm font-bold text-accent-blue">
@@ -301,17 +308,17 @@ export default function JakartaRetailWarZonesPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="border-t border-slate-800 bg-[#0a1424] px-4 py-16 md:px-8 lg:px-16">
+      <section className="section-padding border-t-3 border-black bg-background dot-pattern">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-3">
-          <div>
-            <h2 className="mb-4 font-heading text-2xl font-bold text-white">
+          <div className="neo-card border-t-[6px] border-t-accent-purple">
+            <h2 className="mb-4 font-heading text-2xl font-bold text-text-primary">
               {content.stackTitle}
             </h2>
             <div className="flex flex-wrap gap-2">
               {content.stack.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-slate-700 bg-[#101d31] px-3 py-1 text-sm font-semibold text-slate-200"
+                  className="rounded-full border-2 border-black bg-surface px-3 py-1 text-sm font-bold text-text-primary"
                 >
                   {item}
                 </span>
@@ -319,26 +326,26 @@ export default function JakartaRetailWarZonesPage({ params }: PageProps) {
             </div>
           </div>
 
-          <div>
-            <h2 className="mb-4 font-heading text-2xl font-bold text-white">
+          <div className="neo-card border-t-[6px] border-t-red-500">
+            <h2 className="mb-4 font-heading text-2xl font-bold text-text-primary">
               {content.limitationsTitle}
             </h2>
-            <ul className="space-y-3 text-sm leading-relaxed text-slate-300">
+            <ul className="space-y-3 text-sm leading-relaxed text-text-secondary">
               {content.limitations.map((item) => (
-                <li key={item} className="border-l-2 border-red-400 pl-3">
+                <li key={item} className="border-l-3 border-red-500 pl-3">
                   {item}
                 </li>
               ))}
             </ul>
           </div>
 
-          <div>
-            <h2 className="mb-4 font-heading text-2xl font-bold text-white">
+          <div className="neo-card border-t-[6px] border-t-accent-blue">
+            <h2 className="mb-4 font-heading text-2xl font-bold text-text-primary">
               {content.futureTitle}
             </h2>
-            <ul className="space-y-3 text-sm leading-relaxed text-slate-300">
+            <ul className="space-y-3 text-sm leading-relaxed text-text-secondary">
               {content.future.map((item) => (
-                <li key={item} className="border-l-2 border-accent-blue pl-3">
+                <li key={item} className="border-l-3 border-accent-blue pl-3">
                   {item}
                 </li>
               ))}

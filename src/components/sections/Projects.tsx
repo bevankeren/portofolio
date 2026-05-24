@@ -55,7 +55,7 @@ export default function Projects() {
               <motion.div
                 key={project.id}
                 className={`neo-card border-t-[6px] ${borderColor} ${
-                  project.featured ? "bg-[#07111f] text-white" : ""
+                  project.featured ? "bg-accent-yellow/10" : ""
                 }`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -74,11 +74,7 @@ export default function Projects() {
                     {project.images.map((img, imgIndex) => (
                       <div
                         key={img}
-                        className={`relative h-48 overflow-hidden rounded-neo border-2 sm:h-56 ${
-                          project.featured
-                            ? "border-slate-700 bg-[#0f1b2e]"
-                            : "border-black bg-gray-50"
-                        }`}
+                        className="relative h-48 overflow-hidden rounded-neo border-2 border-black bg-gray-50 sm:h-56"
                       >
                         <Image
                           src={img}
@@ -103,9 +99,7 @@ export default function Projects() {
                   {content.title}
                 </h3>
                 <p
-                  className={`mb-4 max-w-3xl text-sm leading-relaxed ${
-                    project.featured ? "text-slate-300" : "text-text-secondary"
-                  }`}
+                  className="mb-4 max-w-3xl text-sm leading-relaxed text-text-secondary"
                 >
                   {content.desc}
                 </p>
@@ -115,7 +109,6 @@ export default function Projects() {
                     <Badge
                       key={tech}
                       color={badgeColor}
-                      className={project.featured ? "bg-white/5" : ""}
                     >
                       {tech}
                     </Badge>
@@ -126,11 +119,7 @@ export default function Projects() {
                   {project.caseStudy && (
                     <Link
                       href={`/projects/${project.caseStudy}`}
-                      className={`flex items-center gap-1.5 text-sm font-bold transition-colors ${
-                        project.featured
-                          ? "text-accent-yellow hover:text-white"
-                          : "hover:text-accent-purple"
-                      }`}
+                      className="flex items-center gap-1.5 text-sm font-bold transition-colors hover:text-accent-purple"
                     >
                       <ArrowRight size={16} />
                       {t("case_study")}
@@ -141,11 +130,7 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`flex items-center gap-1.5 text-sm font-bold transition-colors ${
-                        project.featured
-                          ? "text-slate-200 hover:text-accent-blue"
-                          : "hover:text-accent-blue"
-                      }`}
+                      className="flex items-center gap-1.5 text-sm font-bold transition-colors hover:text-accent-blue"
                     >
                       <GithubIcon size={16} />
                       {t("source_code")}
@@ -156,11 +141,7 @@ export default function Projects() {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`flex items-center gap-1.5 text-sm font-bold transition-colors ${
-                        project.featured
-                          ? "text-slate-200 hover:text-accent-green"
-                          : "hover:text-accent-green"
-                      }`}
+                      className="flex items-center gap-1.5 text-sm font-bold transition-colors hover:text-accent-green"
                     >
                       <ExternalLink size={16} />
                       {t("live_demo")}
