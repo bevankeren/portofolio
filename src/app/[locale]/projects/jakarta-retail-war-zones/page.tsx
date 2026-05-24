@@ -112,20 +112,44 @@ export default function JakartaRetailWarZonesPage({ params }: PageProps) {
                 <MapPinned size={18} />
                 {content.primaryCta}
               </a>
-              <span className="inline-flex w-full cursor-not-allowed flex-wrap items-center justify-center gap-2 rounded-neo border-3 border-black bg-surface px-5 py-3 font-heading text-sm font-bold text-text-secondary shadow-neo-sm sm:w-auto">
-                <GithubIcon size={18} />
-                {content.githubCta}
-                <span className="rounded-full border-2 border-black bg-accent-yellow px-2 py-0.5 text-[10px] uppercase text-black">
-                  {content.pendingLabel}
+              {retailWarZoneLinks.github ? (
+                <a
+                  href={retailWarZoneLinks.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="neo-btn inline-flex w-full items-center justify-center gap-2 bg-surface text-text-primary sm:w-auto"
+                >
+                  <GithubIcon size={18} />
+                  {content.githubCta}
+                </a>
+              ) : (
+                <span className="inline-flex w-full cursor-not-allowed flex-wrap items-center justify-center gap-2 rounded-neo border-3 border-black bg-surface px-5 py-3 font-heading text-sm font-bold text-text-secondary shadow-neo-sm sm:w-auto">
+                  <GithubIcon size={18} />
+                  {content.githubCta}
+                  <span className="rounded-full border-2 border-black bg-accent-yellow px-2 py-0.5 text-[10px] uppercase text-black">
+                    {content.pendingLabel}
+                  </span>
                 </span>
-              </span>
-              <span className="inline-flex w-full cursor-not-allowed flex-wrap items-center justify-center gap-2 rounded-neo border-3 border-black bg-surface px-5 py-3 font-heading text-sm font-bold text-text-secondary shadow-neo-sm sm:w-auto">
-                <NotebookTabs size={18} />
-                {content.kaggleCta}
-                <span className="rounded-full border-2 border-black bg-accent-yellow px-2 py-0.5 text-[10px] uppercase text-black">
-                  {content.pendingLabel}
+              )}
+              {retailWarZoneLinks.kaggle ? (
+                <a
+                  href={retailWarZoneLinks.kaggle}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="neo-btn inline-flex w-full items-center justify-center gap-2 bg-accent-yellow text-black sm:w-auto"
+                >
+                  <NotebookTabs size={18} />
+                  {content.kaggleCta}
+                </a>
+              ) : (
+                <span className="inline-flex w-full cursor-not-allowed flex-wrap items-center justify-center gap-2 rounded-neo border-3 border-black bg-surface px-5 py-3 font-heading text-sm font-bold text-text-secondary shadow-neo-sm sm:w-auto">
+                  <NotebookTabs size={18} />
+                  {content.kaggleCta}
+                  <span className="rounded-full border-2 border-black bg-accent-yellow px-2 py-0.5 text-[10px] uppercase text-black">
+                    {content.pendingLabel}
+                  </span>
                 </span>
-              </span>
+              )}
             </div>
           </div>
 

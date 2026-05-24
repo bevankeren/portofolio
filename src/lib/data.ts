@@ -35,7 +35,7 @@ export const projects: Project[] = [
       "DBSCAN",
       "Plotly",
     ],
-    github: null,
+    github: "https://github.com/bevankeren/jakarta-retail-war-zones",
     live: "/maps/final_dark_competition_map.html",
     images: [
       "/assets/retail-war-zones/hero_map.png",

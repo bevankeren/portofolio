@@ -1,8 +1,9 @@
 export type CaseStudyLocale = "en" | "id";
 
 export const retailWarZoneLinks = {
-  github: "", // TODO: add GitHub repository URL.
-  kaggle: "", // TODO: add Kaggle notebook URL.
+  github: "https://github.com/bevankeren/jakarta-retail-war-zones",
+  kaggle:
+    "https://www.kaggle.com/code/muhammadbevan/spatial-competition-between-alfamart-and-indomaret",
   map: "/maps/final_dark_competition_map.html",
   clusterMap: "/maps/retail_warzone_cluster_map.html",
   distanceDistribution: "/figures/nearest_competitor_distance_distribution.html",
