@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import LanguageToggle from "@/components/ui/LanguageToggle";
@@ -19,6 +19,7 @@ const navLinks = [
 
 export default function Navbar() {
   const t = useTranslations("nav");
+  const locale = useLocale();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -57,7 +58,7 @@ export default function Navbar() {
       <div className="container-main flex items-center justify-between px-4 md:px-8 h-16">
         {/* Logo */}
         <a
-          href="#home"
+          href={`/${locale}#home`}
           className="font-heading font-bold text-xl md:text-2xl hover:text-accent-blue transition-colors duration-200"
         >
           Bevan.
@@ -68,7 +69,7 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <a
               key={link.key}
-              href={link.href}
+              href={`/${locale}${link.href}`}
               className="text-sm font-medium relative group hover:text-accent-blue transition-colors duration-200"
             >
               {t(link.key)}
@@ -105,7 +106,7 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <a
                   key={link.key}
-                  href={link.href}
+                  href={`/${locale}${link.href}`}
                   onClick={() => setIsOpen(false)}
                   className="text-base font-medium py-3 px-4 rounded-neo hover:bg-accent-blue/10 transition-colors border-2 border-transparent hover:border-black"
                 >

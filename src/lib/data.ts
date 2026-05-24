@@ -1,5 +1,17 @@
 // Portfolio data - easy to update with real content later
 
+type Project = {
+  id: number;
+  category: "business" | "data" | "technical";
+  tech: string[];
+  github: string | null;
+  live: string | null;
+  images: string[];
+  isPlaceholder: boolean;
+  featured?: boolean;
+  caseStudy?: string;
+};
+
 export const personalInfo = {
   name: "Muhammad Bevan Alqarana",
   age: 19,
@@ -12,7 +24,27 @@ export const personalInfo = {
   whatsapp: "https://wa.me/6287717896916",
 };
 
-export const projects = [
+export const projects: Project[] = [
+  {
+    id: 3,
+    category: "data",
+    tech: [
+      "GeoPandas",
+      "OpenStreetMap",
+      "SciPy cKDTree",
+      "DBSCAN",
+      "Plotly",
+    ],
+    github: null,
+    live: "/maps/final_dark_competition_map.html",
+    images: [
+      "/assets/retail-war-zones/hero_map.png",
+      "/assets/retail-war-zones/distance_distribution.png",
+    ],
+    isPlaceholder: false,
+    featured: true,
+    caseStudy: "jakarta-retail-war-zones",
+  },
   {
     id: 1,
     category: "business",

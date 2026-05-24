@@ -22,6 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://portofolio-cyan-six.vercel.app"),
   title: {
     default: "Bevan Alqarana | Portfolio",
     template: "%s | Bevan Alqarana",

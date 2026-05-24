@@ -3,25 +3,31 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink, MapPinned } from "lucide-react";
+import { Link } from "@/i18n/routing";
 import { GithubIcon } from "@/components/ui/Icons";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Badge from "@/components/ui/Badge";
 import { projects } from "@/lib/data";
 
-const cardBorderColors = ["border-t-accent-blue", "border-t-accent-pink", "border-t-accent-green"] as const;
+const cardBorderColors = [
+  "border-t-accent-blue",
+  "border-t-accent-pink",
+  "border-t-accent-green",
+] as const;
 const badgeColors = ["blue", "pink", "green"] as const;
 
-const categoryEmojis: Record<string, string> = {
-  technical: "🤖",
-  business: "📊",
-  data: "📈",
+const categoryLabels: Record<string, string> = {
+  technical: "IT",
+  business: "BA",
+  data: "DA",
 };
 
 export default function Projects() {
   const t = useTranslations("projects");
 
   const projectContent = [
+    { title: t("project3_title"), desc: t("project3_desc") },
     { title: t("project1_title"), desc: t("project1_desc") },
     { title: t("project2_title"), desc: t("project2_desc") },
   ];
@@ -37,26 +43,42 @@ export default function Projects() {
 
         <div className="space-y-8">
           {projects.map((project, index) => {
-            const content = projectContent[index];
-            const borderColor = cardBorderColors[index % cardBorderColors.length];
+            const content = projectContent[index] ?? {
+              title: "Project",
+              desc: "",
+            };
+            const borderColor =
+              cardBorderColors[index % cardBorderColors.length];
             const badgeColor = badgeColors[index % badgeColors.length];
 
             return (
               <motion.div
                 key={project.id}
-                className={`neo-card border-t-[6px] ${borderColor}`}
+                className={`neo-card border-t-[6px] ${borderColor} ${
+                  project.featured ? "bg-[#07111f] text-white" : ""
+                }`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
-                {/* Images */}
+                {project.featured && (
+                  <div className="mb-4 inline-flex items-center gap-2 rounded-neo border-2 border-accent-yellow bg-accent-yellow px-3 py-1 font-heading text-xs font-bold uppercase tracking-wide text-black">
+                    <MapPinned size={14} />
+                    {t("featured")}
+                  </div>
+                )}
+
                 {project.images.length > 0 && (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+                  <div className="grid grid-cols-1 gap-3 mb-5 sm:grid-cols-2">
                     {project.images.map((img, imgIndex) => (
                       <div
-                        key={imgIndex}
-                        className="relative h-48 sm:h-56 border-2 border-black rounded-neo overflow-hidden bg-gray-50"
+                        key={img}
+                        className={`relative h-48 overflow-hidden rounded-neo border-2 sm:h-56 ${
+                          project.featured
+                            ? "border-slate-700 bg-[#0f1b2e]"
+                            : "border-black bg-gray-50"
+                        }`}
                       >
                         <Image
                           src={img}
@@ -69,38 +91,61 @@ export default function Projects() {
                   </div>
                 )}
 
-                {/* No images fallback */}
                 {project.images.length === 0 && (
-                  <div className="h-40 border-2 border-black rounded-neo mb-5 bg-gray-50 flex items-center justify-center">
-                    <span className="text-5xl">{categoryEmojis[project.category] || "💻"}</span>
+                  <div className="mb-5 flex h-40 items-center justify-center rounded-neo border-2 border-black bg-gray-50">
+                    <span className="font-heading text-5xl font-bold">
+                      {categoryLabels[project.category] || "PR"}
+                    </span>
                   </div>
                 )}
 
-                {/* Content */}
-                <h3 className="font-heading font-bold text-xl mb-2">
+                <h3 className="mb-2 font-heading text-xl font-bold">
                   {content.title}
                 </h3>
-                <p className="text-text-secondary text-sm mb-4 leading-relaxed max-w-3xl">
+                <p
+                  className={`mb-4 max-w-3xl text-sm leading-relaxed ${
+                    project.featured ? "text-slate-300" : "text-text-secondary"
+                  }`}
+                >
                   {content.desc}
                 </p>
 
-                {/* Tech badges */}
-                <div className="flex flex-wrap gap-2 mb-5">
+                <div className="mb-5 flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
-                    <Badge key={tech} color={badgeColor}>
+                    <Badge
+                      key={tech}
+                      color={badgeColor}
+                      className={project.featured ? "bg-white/5" : ""}
+                    >
                       {tech}
                     </Badge>
                   ))}
                 </div>
 
-                {/* Links */}
-                <div className="flex gap-4">
+                <div className="flex flex-wrap gap-4">
+                  {project.caseStudy && (
+                    <Link
+                      href={`/projects/${project.caseStudy}`}
+                      className={`flex items-center gap-1.5 text-sm font-bold transition-colors ${
+                        project.featured
+                          ? "text-accent-yellow hover:text-white"
+                          : "hover:text-accent-purple"
+                      }`}
+                    >
+                      <ArrowRight size={16} />
+                      {t("case_study")}
+                    </Link>
+                  )}
                   {project.github && (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-sm font-bold hover:text-accent-blue transition-colors"
+                      className={`flex items-center gap-1.5 text-sm font-bold transition-colors ${
+                        project.featured
+                          ? "text-slate-200 hover:text-accent-blue"
+                          : "hover:text-accent-blue"
+                      }`}
                     >
                       <GithubIcon size={16} />
                       {t("source_code")}
@@ -111,7 +156,11 @@ export default function Projects() {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-sm font-bold hover:text-accent-green transition-colors"
+                      className={`flex items-center gap-1.5 text-sm font-bold transition-colors ${
+                        project.featured
+                          ? "text-slate-200 hover:text-accent-green"
+                          : "hover:text-accent-green"
+                      }`}
                     >
                       <ExternalLink size={16} />
                       {t("live_demo")}
