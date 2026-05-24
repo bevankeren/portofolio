@@ -174,7 +174,7 @@ export default function Hero() {
             <div className="relative z-10 border-3 border-black rounded-neo shadow-neo bg-accent-yellow p-4 rotate-[2deg]">
               <div className="relative h-[470px] md:h-[540px] border-3 border-black rounded-neo bg-white overflow-hidden">
                 <Image
-                  src="/images/potoprofil.jpeg"
+                  src="/images/potoprofil.png"
                   alt="Muhammad Bevan Alqarana"
                   fill
                   className="object-cover"
